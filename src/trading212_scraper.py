@@ -86,10 +86,9 @@ class Scrape():
         self.has_setup = True
 
 
-    def scape(self, account):
+    def scrape(self, account):
 
 
-        print("Starting scaping..")
 
         if not self.has_setup:
             self.setup()

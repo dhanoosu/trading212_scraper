@@ -11,6 +11,11 @@ $> pip install selenium
 $> pip install msedge-selenium-tools
 ```
 
+## Setup
+Make sure the following show tabs setting are checked, and that 2 Factor-Authenication is disabled.
+
+<img src="img/show_tabs_settings.jpg" width="220">
+
 ## How to clone
     git clone https://github.com/dhanoosu/trading212_scraper.git
 

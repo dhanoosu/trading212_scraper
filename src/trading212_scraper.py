@@ -94,6 +94,7 @@ class Scrape():
             self.setup()
 
         wait_for_element_clickable(self.driver, By.CLASS_NAME, ClassNames.ACCOUNT_MENU_HEADER)
+        time.sleep(3)
 
         try:
             self.driver.find_element_by_xpath(Xpaths.SPLASH_SCREEN_X_BUTTON).click()
@@ -251,7 +252,10 @@ class Scrape():
             print("Selecting INVESTING")
 
             try:
-                self.driver.find_element_by_xpath('//*[@id="app"]/div[11]/div/div/div/div/div[1]/div/div[1]/div[2]').click()
+                self.driver.find_element_by_xpath('//*[@id="app"]/div[11]/div/div/div/div/div[1]/div/div[1]/div[1]').click()
+            except NoSuchElementException as e:
+                print(e)
+                sys.exit(1)
             except Exception as e:
                 print(e)
                 self.driver.find_element_by_class_name('account-menu-header').click()
@@ -261,14 +265,16 @@ class Scrape():
             print("Selecting ISA")
 
             try:
-                self.driver.find_element_by_xpath('//*[@id="app"]/div[11]/div/div/div/div/div[1]/div/div[1]/div[3]').click()
+                self.driver.find_element_by_xpath('//*[@id="app"]/div[11]/div/div/div/div/div/div/div[1]/div[2]').click()
+            except NoSuchElementException as e:
+                print(e)
+                sys.exit(1)
             except Exception as e:
                 print (e)
                 self.driver.find_element_by_class_name('account-menu-header').click()
         else:
             print("ERR: unknown account")
             sys.exit(1)
-
 
         time.sleep(5)
 
